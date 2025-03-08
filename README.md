@@ -84,7 +84,7 @@ fig_overtime.show()
 - **Work-Life Balance Matters:** Employees with **poor work-life balance** are more likely to quit.
 ---
 
-📊 Simple Predictive Model for Employee Attrition (Python)
+📊 Simple Predictive Model for Employee Attrition 
 
 Model Overview
 
