@@ -91,46 +91,60 @@ Model Overview
 A basic classification model is built using Logistic Regression to predict employee attrition based on key features.
 
 Python Code for Predictive Model
-
+```
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
+```
 
 # Select relevant features
+```
 features = ["Age", "MonthlyIncome", "JobSatisfaction", "OverTime", "YearsAtCompany"]
 df = df[features + ["Attrition"]]
+```
 
 # Encode categorical variables
+```
 le = LabelEncoder()
 df["Attrition"] = le.fit_transform(df["Attrition"])
 df["OverTime"] = le.fit_transform(df["OverTime"])
+```
 
 # Split data
+```
 X = df[features]
 y = df["Attrition"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
 
 # Train Logistic Regression Model
+```
 model = LogisticRegression()
 model.fit(X_train, y_train)
+```
 
 # Predictions
+```
 y_pred = model.predict(X_test)
+```
 
 # Model Evaluation
+```
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Model Accuracy: {accuracy:.2f}")
 print(classification_report(y_test, y_pred))
+```
 
 Insights from the Model
 
-The model predicts whether an employee will leave the company based on key attributes.
+- The model predicts whether an employee will leave the company based on key attributes.
 
-OverTime, JobSatisfaction, and YearsAtCompany have a strong impact on attrition.
+- OverTime, JobSatisfaction, and YearsAtCompany have a strong impact on attrition.
 
-Future improvements can include more features and advanced machine learning techniques.
+- Future improvements can include more features and advanced machine learning techniques.
+```
 
 📝 Key Takeaways
 
